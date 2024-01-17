@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Bruno2</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(18, 18, 18);
+        }
+        div{
+            background-color: rgba(32, 32, 33,0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 60px 80px;
+            border-radius: 15px;
+            color: #fff;
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        select {
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        button{
+            background-color: #B88355;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            
+        }
+        button:hover{
+            background-color: #d8a171;
+            cursor: pointer;
+        }
+        section {
+            text-align: center;
+        }
+        img {
+            width: 110px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        a:hover{
+            color: #cfcfcf;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <a href="/"><img src="img/logo.png"></a>
+
+    </section>
+    <div>
+        <form action="/barber2/agendar=1/" method="post">
+            <h1>Agendar</h1>
+            <input type="text" name="name" placeholder="Nome*">
+            <br><br>
+            <input name="dia" type="date" placeholder="Data*" required>
+            <br><br>
+            <button>Proximo</button>
+            <br><br>
+        </form>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+        function verify() {
+            var input = document.querySelector('input[type=date]');
+            if (!input.value == '') {
+                var data = new Date(input.value);
+                if (data.getDay() == 6){
+                    input.value = ''
+                    alert('Não trabalhamos no domingo!')
+                }
+            }
+            
+        }
+        var intervalo = setInterval(verify, 1000);
+    </script>
+</body>
+</html>

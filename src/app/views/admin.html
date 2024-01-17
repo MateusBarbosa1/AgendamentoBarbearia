@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Admin</title>
+    <style>
+        .agendamentos {
+            width: 90%;
+            margin: 5% 5%;
+            display: flex;
+            overflow-x: scroll;
+        }
+        .agendamentoSingle {
+            padding: 15px;
+            margin: 0 2%;
+            text-align: center;
+            width: 28%;
+            height: 5%;
+            background: #B88355;
+            color: white;
+            border-radius: 5px;
+        }
+        .agendamentoSingle button {
+            color: white;
+            margin-bottom: 2%;
+            background: #5a412b;
+        }
+
+        @media screen and (max-width: 538px){
+            .agendamentoSingle {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="topper" style="background: #B88355;">
+
+        <div class="logo">
+            <img src="/img/logo.png" alt="">
+        </div><!--logo-->
+        <nav>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list" style="background: #B88355;">
+            <li><a href="/">Início</a></li>
+            <li><a onclick="galeria()">Galeria</a></li>
+            <li><a onclick="servicos()">Serviços</a></li>
+            <li><a style="font-weight: bold;">Painel</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+            <a href="https://api.whatsapp.com/send/?phone=5581998234779&text&type=phone_number&app_absent=0"><img src="/img/whatsapp.png" alt=""></a>
+            <a href="https://www.instagram.com/brunobarberr_/"><img src="/img/instagram.png" alt=""></a>
+        </div>
+        <img  class="bar" src="/img/cardapio.png" alt="">
+
+    </div><!--topper-->
+
+    <h2 class="title-galeria" style="color: black;font-size: 40px;">AGENDAMENTOS</h2>
+
+    <section class="agendamentos">
+        <% for (var i = 0;i < agendamentos.length;i++) { %>
+        <div class="agendamentoSingle">
+            <h2 class="nome"><%= agendamentos[i].nome %></h2><br>
+            <p><span>Data:</span>  <%= agendamentos[i].data %></p>
+            <p><span>Hora:</span>  <%= agendamentos[i].hora %></p>
+            <% if(agendamentos[i].barbeiro == 1){ %>
+                <p><span>Barbeiro:</span>  Bruno</p>
+            <%} else { %>
+                <p><span>Barbeiro:</span>  Wallace</p>
+            <% } %>
+            <button onclick="conclude(<%= agendamentos[i].id %>)">Concluir</button>
+        </div><!--agendamentoSingle-->
+        <% } %>
+    </section>
+
+    <script src="/js/script.js"></script>
+    <script>
+        const menu = document.querySelector('.mobile-menu');
+        var stats = false
+
+        menu.addEventListener('click', ()=>{
+            if (stats == false) {
+                const v = document.querySelector('.valor');
+                v.style = 'display: none;'
+                stats = true;
+            } else {
+                const v = document.querySelector('.valor');
+                v.style = 'display: inline-block;color: black;'
+                stats = false;
+            }
+        });
+
+        function conclude(id){
+            window.location.href = '/delete/'+id
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Barber - Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <section class="main">
+        <div class="topper">
+
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div><!--logo-->
+            <nav>
+              <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+              <ul class="nav-list">
+                <li><a href="/" style="font-weight: bold;color: #B88355;">Início</a></li>
+                <li><a onclick="galeria()">Galeria</a></li>
+                <li><a onclick="servicos()">Serviços</a></li>
+                <li><a href="/login">Entrar</a></li>
+              </ul>
+            </nav>
+            <div class="icons">
+                <a href="https://api.whatsapp.com/send/?phone=5581998234779&text&type=phone_number&app_absent=0"><img src="img/whatsapp.png" alt=""></a>
+                <a href="https://www.instagram.com/brunobarberr_/"><img src="img/instagram.png" alt=""></a>
+            </div>
+            <img  class="bar" src="img/cardapio.png" alt="">
+
+        </div><!--topper-->
+        <div class="info">
+            <h2 class="title">Agende o Seu Horario!</h2>
+            <p>Com esse novo site você podera agendar seu corte de forma <e>rapida</e> e <e>facil</e>, apertando no botão abaixo!</p>
+            <button onclick="window.location.href = `${window.location.href}agendamento`">Agendar</button>
+        </div><!--info-->
+        <br><br><br>
+    </section><!--main-->
+   
+    <h2 class="title-galeria">GALERIA</h2>
+
+    <div class="gallery">
+        <div class="image">
+          <img src="img/galeria1.png" alt="Descrição da imagem">
+        </div>
+        <div class="image">
+            <img src="img/galeria5.png" alt="Descrição da imagem">
+        </div>
+        <div class="image">
+          <img src="img/galeria3.png" alt="Descrição da imagem">
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="image">
+          <img src="img/galeria4.png" alt="Descrição da imagem">
+        </div>
+        <div class="image">
+            <img src="img/galeria2.png" alt="Descrição da imagem">
+        </div>
+        <div class="image">
+          <img src="img/galeria6.png" alt="Descrição da imagem">
+        </div>
+      </div>
+
+      <section class="services">
+          <h2 class="title-services">SERVIÇOS</h2>
+          <div class="single-service">
+            <h2 class="service">Corte de Cabelo</h2>
+            <p class="valor">R$ 25</p>
+            
+          </div><!--single-service-->
+          <hr>
+          <div class="single-service">
+            <h2 class="service">Barba</h2>
+            <p class="valor">R$ 10</p>
+            
+          </div><!--single-service-->
+          <hr>
+          <div class="single-service">
+            <h2 class="service">"Nevou"</h2>
+            <p class="valor">R$ 30</p>
+            
+          </div><!--single-service-->
+          <br>
+
+      </section><!--services-->
+      <footer>
+        <div class="extra">
+          <h2 class="title-extra">Fale com a Gente</h2>
+          <br>
+          <p>(81) 998234779</p>
+          <p>brunobarber@gmail.com</p>
+        </div><!--extra-->
+        <div class="extra">
+          <h2 class="title-extra">Nosso Endereço</h2>
+          <br>
+          <p>R. Cônego Benígno Líra - São José, Surubim - PE, 55750-000</p>
+        </div><!--extra-->
+        <div class="extra">
+          <h2 class="title-extra">Horario de Atendimento</h2>
+          <br>
+          <p>Seg - Qui: 8h - 19h</p>
+          <p>Sex - Sab: 8h - 20h</p>
+        </div><!--extra-->
+
+        
+      </footer>
+      <div class="rodape">
+        <p>© 2023 por Sr.Bruno Barbearia. Orgulhosamente criado por WebTecnology</p>
+      </div>
+
+      <script src="js/script.js"></script>
+</body>
+</html>

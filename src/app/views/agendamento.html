@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Barber - Agendamento</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .barbers {
+            display: flex;
+            margin: 3% 20%;
+        }
+        .barber {
+            text-align: center;
+        }
+        .barber img {
+            width: 50%;
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 655px) {
+            .barbers {
+                display: block;
+            }
+        }
+        @media screen and (max-width: 455px) {
+            .barber img {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topper" style="background: black;">
+
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div><!--logo-->
+        <nav>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="/">Início</a></li>
+            <li><a onclick="galeria()">Galeria</a></li>
+            <li><a onclick="servicos()">Serviços</a></li>
+            <li><a href="/login">Entrar</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+            <a href="https://api.whatsapp.com/send/?phone=5581998234779&text&type=phone_number&app_absent=0"><img src="img/whatsapp.png" alt=""></a>
+            <a href="https://www.instagram.com/brunobarberr_/"><img src="img/instagram.png" alt=""></a>
+        </div>
+        <img  class="bar" src="img/cardapio.png" alt="">
+
+    </div><!--topper-->
+
+    <section class="agendar">
+        <div class="title-galeria" style="margin: 1% 0;">
+            <h2 style="color: black;font-size: 50px;">BARBERS</h2>
+        </div>
+        <div class="barbers">
+            <div class="barber">
+                <img src="img/barber1.png">
+                <h2>Bruno</h2>
+                <button onclick="bruno1()" style="color: black;border-color: black;">Agendar</button>
+            </div>
+            <div class="barber">
+                <img src="img/barber1.png">
+                <h2>Bruno</h2>
+                <button onclick="bruno2()" style="color: black;border-color: black;">Agendar</button>
+            </div>
+        </div>
+    </section><!--agendar-->
+
+    <a href="/agendar-barber1" id="link1" style="display: none;"></a>
+    <a href="/agendar-barber2" id="link2" style="display: none;"></a>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        var link1 = document.getElementById('link1');
+        var link2 = document.getElementById('link2');
+
+        function bruno1(){
+            link1.click();
+        }
+        function bruno2() {
+            link2.click();
+        }
+
+    </script>
+</body>
+</html>
