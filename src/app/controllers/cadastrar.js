@@ -3,7 +3,7 @@ function renderCadastrar(app,req,res) {
 }
 async function cadastrarNovoUsuario(app,req,res) {
     var userData = req.body;
-    var userModel = app.app.models.userModel(connection);
+    var userModel = require('../models/userModel');
 
     await userModel.cadastrarUsuario(userData);
 

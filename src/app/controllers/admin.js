@@ -1,5 +1,5 @@
 async function renderAdmin(app,req,res) {
-    const agendamentoModel = app.app.models.agendamentoModel;
+    const agendamentoModel = require('../models/agendamentoModel');
     const getAgendamentos = await agendamentoModel.getAgendamentos();
     
     console.log(getAgendamentos)
@@ -8,11 +8,10 @@ async function renderAdmin(app,req,res) {
 }
 async function deleteAgendamento(app,req,res) {
     var id = req.params.id;
-    var agendamentoModel = app.app.models.agendamentoModel;
+    var agendamentoModel = require('../models/agendamentoModel');
 
     await agendamentoModel.deleteAgendamento(id);
-    app.app.controllers.admin.renderAdmin(app,req,res);
-
+    renderAdmin(app,req,res);
 }
 
 

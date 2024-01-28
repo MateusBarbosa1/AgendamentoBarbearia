@@ -42,7 +42,7 @@ async function AgendamentoData(barber,app,req,res) {
         '18:30',
         '19:00'
     ]
-    const agendamentoModel = app.app.models.agendamentoModel;
+    const agendamentoModel = require('../models/agendamentoModel');
     const getAgendamentos = await agendamentoModel.getAgendamentos();
 
 
@@ -60,7 +60,7 @@ async function AgendamentoHora(barber,app,req,res) {
     var horario = inputData.horario;
     horarioDB = `${horario}`
 
-    const agendamentoModel = app.app.models.agendamentoModel;
+    const agendamentoModel = require('../models/agendamentoModel');
     await agendamentoModel.agendarDataHora(dataDB,horarioDB,nomeDB,barber);
 
     res.redirect('agendamento-concluido');

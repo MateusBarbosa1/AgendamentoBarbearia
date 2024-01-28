@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const consign = require('consign');
 
 const app = express();
 const path = require('path');
@@ -12,10 +11,9 @@ app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, '../app/public')));
 app.set('views', path.join(__dirname, '../app/views'));
 
-consign()
-    .include('app/routes')
-    .then('app/models')
-    .then('app/controllers')
-    .into(app);
+require('../app/routes/home')(app);
+require('../app/routes/login')(app);
+require('../app/routes/agendamento')(app);
+require('../app/routes/cadastrar')(app);
 
 module.exports = app;
