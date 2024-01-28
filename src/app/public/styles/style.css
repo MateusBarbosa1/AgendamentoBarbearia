@@ -277,6 +277,9 @@ footer {
 
     font-style: italic;
 }
+.single-service h2 {
+    font-size: 20px;
+}
 
 @media screen and (max-width: 768px) {
     .image {
